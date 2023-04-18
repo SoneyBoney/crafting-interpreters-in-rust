@@ -121,7 +121,7 @@ impl<'a> Scanner<'a> {
                     self.add_token(TokenType::SLASH);
                 }
             }
-            ' ' | '\r' | 't' => {}
+            ' ' | '\r' | '\t' => {}
             '\n' => self.line += 1,
             '"' => self.string(),
             _ => {

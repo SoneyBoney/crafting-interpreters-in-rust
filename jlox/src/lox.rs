@@ -64,8 +64,10 @@ impl Lox {
         println!("{}", source);
         let mut scanner = scanner::Scanner::new(&self, source);
         let tokens = scanner.scan_tokens();
+        println!("{:#?}", tokens);
         let mut parser = parser::Parser::new(&self, &tokens);
         let expr = parser.parse().unwrap();
+        
         println!("{:#?}", expr);
     }
 }
